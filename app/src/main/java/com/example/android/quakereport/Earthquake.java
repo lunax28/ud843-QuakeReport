@@ -14,12 +14,18 @@ public class Earthquake {
 
     private long mTimeInMilliseconds;
 
-    public Earthquake(Double magnitude, String location, long mTimeInMilliseconds) {
+    private String url;
+
+    public Earthquake(Double magnitude, String location, long mTimeInMilliseconds, String url) {
         this.mMagnitude = magnitude;
         this.mLocation = location;
         this.mTimeInMilliseconds = mTimeInMilliseconds;
+        this.url = url;
     }
 
+    public String getUrl() {
+        return url;
+    }
 
     public long getTimeInMilliseconds() {
         return mTimeInMilliseconds;
