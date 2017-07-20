@@ -17,12 +17,12 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.android.quakereport.EarthquakeActivity.LOG_TAG;
-
 /**
  * Helper methods related to requesting and receiving earthquake data from USGS.
  */
 public final class QueryUtils {
+
+    public static final String LOG_TAG = QueryUtils.class.getName();
 
     private QueryUtils() {
     }
@@ -30,7 +30,13 @@ public final class QueryUtils {
 
     public static List<Earthquake> fetchEarthquakeData(String requestUrl) {
 
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
+        Log.i(LOG_TAG, "TEST: fetchEarthquakeData() called");
         // Create URL object
         URL url = createUrl(requestUrl);
 
